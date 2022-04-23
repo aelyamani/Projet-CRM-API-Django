@@ -41,7 +41,7 @@ CORS_ALLOWED_ORIGINS = [
 
 CSRF_COOKIE_DOMAIN = 'ppeaelya.xyz'
 
-CSRF_TRUSTED_ORIGINS = ['https://apicrm.ppeaelya.xyz']
+CSRF_TRUSTED_ORIGINS = ['https://apicrm.ppeaelya.xyz', 'https://easysoftcrm.ppeaelya.xyz']
    
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
