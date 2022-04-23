@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,16 +20,28 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$a=8s9t-&qd3ga%)jj!84!718v=w&$kf6o1b0js_pw&asoutez'
+SECRET_KEY = '!EVcobkS$@ar9gC34Aapdd*h4rXoNtRpzP5Vo!7yDc!etvP7EQ88%@34HneN*XJHPUH%stw5en&^2huG'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+ALLOWED_HOSTS = ['apicrm.ppeaelya.xyz','www.apicrm.ppeaelya.xyz','easysoftcrm.ppeaelya.xyz', 'www.easysoftcrm.ppeaelya.xyz','localhost']
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:8080',
+    'http://localhost',
+    'https://apicrm.ppeaelya.xyz',
+    'https://easysoftcrm.ppeaelya.xyz',
+    'https://localhost',
 ]
+
+CSRF_COOKIE_DOMAIN = 'ppeaelya.xyz'
+
+CSRF_TRUSTED_ORIGINS = ['https://apicrm.ppeaelya.xyz']
    
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -96,8 +108,12 @@ WSGI_APPLICATION = 'easysoftcrm_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'easysoftcrm_ppe',
+        'USER': 'easysoftcrm_user',
+        'PASSWORD': '%%@*9x5!w5sEzH5YfwyvaqVJC',
+        'HOST': '127.0.0.1',
+        'PORT': '',
     }
 }
 
@@ -136,7 +152,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
