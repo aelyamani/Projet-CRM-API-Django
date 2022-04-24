@@ -34,7 +34,9 @@ ALLOWED_HOSTS = ['apicrm.ppeaelya.xyz','.ppeaelya.xyz','localhost']
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost',
+    'http://easysoftcrm.ppeaelya.xyz',
     'https://easysoftcrm.ppeaelya.xyz',
+    'http://apicrm.ppeaelya.xyz',
     'https://apicrm.ppeaelya.xyz',
     'https://localhost',
 ]
@@ -52,7 +54,7 @@ CORS_ALLOW_HEADERS = [
     "x-requested-with",
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
 
 CSRF_COOKIE_DOMAIN = 'ppeaelya.xyz'
 
