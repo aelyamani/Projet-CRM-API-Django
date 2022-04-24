@@ -30,7 +30,7 @@ SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = ['apicrm.ppeaelya.xyz','easysoftcrm.ppeaelya.xyz','localhost']
+ALLOWED_HOSTS = ['apicrm.ppeaelya.xyz','.ppeaelya.xyz','localhost']
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost',
