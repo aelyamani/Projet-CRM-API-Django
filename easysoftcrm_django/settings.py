@@ -109,7 +109,7 @@ WSGI_APPLICATION = 'easysoftcrm_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'easysoftcrm-ppe',
+        'NAME': 'easysoftcrm_ppe',
         'USER': 'easysoftcrm_user',
         'PASSWORD': '%%@*9x5!w5sEzH5YfwyvaqVJC',
         'HOST': '127.0.0.1',
