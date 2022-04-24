@@ -39,6 +39,18 @@ CORS_ALLOWED_ORIGINS = [
     'https://localhost',
 ]
 
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
+
 CSRF_COOKIE_DOMAIN = 'ppeaelya.xyz'
 
 CSRF_TRUSTED_ORIGINS = ['https://apicrm.ppeaelya.xyz', 'https://easysoftcrm.ppeaelya.xyz']
