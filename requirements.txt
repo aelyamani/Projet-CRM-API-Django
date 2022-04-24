@@ -2,4 +2,4 @@ Django
 django-cors-headers
 django-rest-framework
 djoser
-
+psycopg2-binary
