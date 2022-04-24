@@ -34,8 +34,8 @@ ALLOWED_HOSTS = ['apicrm.ppeaelya.xyz','.ppeaelya.xyz','localhost']
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost',
-    'https://apicrm.ppeaelya.xyz',
     'https://easysoftcrm.ppeaelya.xyz',
+    'https://apicrm.ppeaelya.xyz',
     'https://localhost',
 ]
 
