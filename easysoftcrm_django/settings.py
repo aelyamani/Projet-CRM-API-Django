@@ -26,11 +26,11 @@ SECRET_KEY = '!EVcobkS$@ar9gC34Aapdd*h4rXoNtRpzP5Vo!7yDc!etvP7EQ88%@34HneN*XJHPU
 DEBUG = True
 
 
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+#SECURE_SSL_REDIRECT = True
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = ['apicrm.ppeaelya.xyz','.ppeaelya.xyz','localhost']
+ALLOWED_HOSTS = ['apicrm.ppeaelya.xyz','.ppeaelya.xyz','localhost:8080']
 
 CORS_ALLOW_HEADERS = [
     "accept",
