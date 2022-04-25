@@ -33,7 +33,7 @@ class Lead(models.Model):
         (HIGH, 'Forte'),
     )
 
-    team = models.ForeignKey(Team, related_name='leads',
+    team = models.ForeignKey(Team, null=True, related_name='leads',
                              on_delete=models.CASCADE)
     company = models.CharField(_('Entreprise'), max_length=255)
     contact_person = models.CharField(_('Contact'), max_length=255)
