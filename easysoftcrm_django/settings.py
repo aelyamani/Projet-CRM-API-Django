@@ -30,7 +30,7 @@ DEBUG = True
 #SESSION_COOKIE_SECURE = True
 #CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = ['apicrm.ppeaelya.xyz','.ppeaelya.xyz','localhost:8080']
+ALLOWED_HOSTS = ['apicrm.ppeaelya.xyz', '.ppeaelya.xyz', 'localhost:8080']
 
 CORS_ALLOW_HEADERS = [
     "accept",
@@ -48,8 +48,9 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 CSRF_COOKIE_DOMAIN = 'ppeaelya.xyz'
 
-CSRF_TRUSTED_ORIGINS = ['https://apicrm.ppeaelya.xyz', 'https://easysoftcrm.ppeaelya.xyz']
-   
+CSRF_TRUSTED_ORIGINS = ['https://apicrm.ppeaelya.xyz',
+                        'https://easysoftcrm.ppeaelya.xyz']
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
@@ -116,12 +117,8 @@ WSGI_APPLICATION = 'easysoftcrm_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'easysoftcrm_ppe',
-        'USER': 'easysoftcrm_user',
-        'PASSWORD': '%%@*9x5!w5sEzH5YfwyvaqVJC',
-        'HOST': '127.0.0.1',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

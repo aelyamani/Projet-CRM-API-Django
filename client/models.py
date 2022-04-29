@@ -10,7 +10,7 @@ from team.models import Team
 # Model client
 class Client(models.Model):
     team = models.ForeignKey(
-        Team, related_name='clients', null=True ,on_delete=models.CASCADE)
+        Team, related_name='clients', null=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     contact_person = models.CharField(max_length=255)
     email = models.EmailField()
@@ -34,7 +34,7 @@ class Client(models.Model):
 
 # Model notes
 class Note(models.Model):
-    team = models.ForeignKey(Team, related_name='notes',
+    team = models.ForeignKey(Team, null=True, related_name='notes',
                              on_delete=models.CASCADE)
     client = models.ForeignKey(
         Client, related_name='notes', on_delete=models.CASCADE)
