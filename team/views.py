@@ -25,6 +25,29 @@ class TeamViewSet (viewsets.ModelViewSet):
         obj.members.add(self.request.user)
         obj.save()
 
+
+class UserDetail(APIView):
+    def get_object(self, pk):
+        try:
+            return User.objects.get(pk=pk)
+        except User.DoesNotExist:
+            raise Http404
+
+    def get(self, request, pk, format=None):
+        user = self.get_object(pk)
+        serializer = UserSerializer(user)
+        return Response(serializer.data)
+
+    def put(self, request, pk, format=None):
+        user = self.get_object(pk)
+        serializer = UserSerializer(user, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 # Only GET
 # Methode api pour retourner l'équipe de l'utilisateur
 
@@ -54,25 +77,3 @@ def add_member(request):
     return Response()
 
 # Class pour retourner les informations utilisateurs
-
-
-class UserDetail(APIView):
-    def get_object(self, pk):
-        try:
-            return User.objects.get(pk=pk)
-        except User.DoesNotExist:
-            raise Http404
-
-    def get(self, request, pk, format=None):
-        user = self.get_object(pk)
-        serializer = UserSerializer(user)
-        return Response(serializer.data)
-
-    def put(self, request, pk, format=None):
-        user = self.get_object(pk)
-        serializer = UserSerializer(user, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

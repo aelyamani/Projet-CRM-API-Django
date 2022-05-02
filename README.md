@@ -1,1 +1,1 @@
-# easysoftcrm-api-django
+# workyspacecrm-api-django
