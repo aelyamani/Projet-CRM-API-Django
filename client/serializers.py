@@ -1,7 +1,9 @@
 from rest_framework import serializers
+from workyspacecrm_django import settings
 
 from .models import Client
 from .models import Note
+from .models import Document
 
 
 # Serializer client
@@ -34,4 +36,21 @@ class NoteSerializer(serializers.ModelSerializer):
             'id',
             'name',
             'body',
+        )
+
+
+class DocumentSerializer(serializers.ModelSerializer):
+    # file_url = serializers.SerializerMethodField('get_file_url')
+
+    # def get_file_url(self, obj):
+    #     return '%s%s' % (settings.MEDIA_URL, obj.file)
+
+    class Meta:
+        model = Document
+        fields = (
+            'id',
+            'name',
+            'type',
+            'file',
+            'description',
         )
